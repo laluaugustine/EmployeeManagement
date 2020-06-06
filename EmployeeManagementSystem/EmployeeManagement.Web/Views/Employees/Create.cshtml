@@ -1,0 +1,45 @@
+﻿@model EmployeeManagement.Model.Employee
+@{
+    ViewBag.Title = "Create";
+}
+    <div class="form-horizontal">
+        <div class="page-header">
+            <h1><small>Add Employee</small></h1>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="EmployeeID">Employee ID</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="EmployeeID" name="EmployeeID" type="text" value="" data-bind="value: EmployeeID">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="FirstName">First Name</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="FirstName" name="FirstName" type="text" value="" data-bind="value: FirstName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LastName">Last Name</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="LastName" name="FirstName" type="text" value="" data-bind="value: LastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Address">Address</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Address" name="CourseDescription" type="text" value="" data-bind="value: Address">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" data-bind="click: createEmployee" value="Create" class="btn btn-success">
+            </div>
+        </div>
+    </div>
+<div>
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-default" })
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/knockout-3.5.1.js"></script>
+<script src="~/Scripts/KOScripts/KOCreate.js"></script>

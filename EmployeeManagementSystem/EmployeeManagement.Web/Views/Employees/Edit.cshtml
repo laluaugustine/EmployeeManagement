@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="page-header">
+    <h1><small>Edit Employee</small></h1>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2" for="EmployeeID">Employee Id</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="EmployeeID" name="EmployeeID" type="text" value="" data-bind="value: EmployeeID">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="FirsName">FirstName</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="FirstName" name="FirstName" type="text" value="" data-bind="value: FirstName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="LastName">Last Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" value="" data-bind="value: LastName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Address">Address</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Address" name="Address" type="text" value="" data-bind="value: Address">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" data-bind="click: updateEmployee" value="Update" class="btn btn-success">
+        </div>
+    </div>
+    <div class="alert alert-success" role="alert" style="display:none; margin-top: 10px;"> <span class="glyphicon  glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Form has submitted with successful </div>
+    <div class="alert alert-danger" role="alert" style="display:none; margin-top: 10px;"> <span class="glyphicon  glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Please check your submission </div>
+</div>
+}
+<script type="text/javascript">
+    var selectedEmployee = '@Html.Raw(ViewBag.selectedEmployee)';
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</div>
+<style type="text/css">
+    .errorStyle {
+        background-color: #ffd800;
+        color: #808080;
+        font-size: 13px;
+        padding: 5px 5px;
+        border-radius: 5px;
+        margin-top: 7px;
+    }
+</style>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/knockout-3.5.1.js"></script>
+<script src="~/Scripts/KOScripts/KOUpdate.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/knockout.validation.js"></script>
